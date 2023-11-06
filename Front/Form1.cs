@@ -4,13 +4,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace Front
 {
@@ -19,23 +17,7 @@ namespace Front
         public Form1()
         {
             InitializeComponent();
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-
-
-            //cOLOR
-            this.BackColor = ColorTranslator.FromHtml("#E7E9EF");
-
-            //button2
-
-            //button1
-
         }
-
-
-
-
-        public virtual System.Drawing.Color BackColor { get; set; }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -85,69 +67,56 @@ namespace Front
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            GraphicsPath GetRoundPath(RectangleF Rect, int radius)
-            {
-                float r2 = radius / 2f;
-                GraphicsPath GraphPath = new GraphicsPath();
-
-                GraphPath.AddArc(Rect.X, Rect.Y, radius, radius, 180, 90);
-                GraphPath.AddLine(Rect.X + r2, Rect.Y, Rect.Width - r2, Rect.Y);
-                GraphPath.AddArc(Rect.X + Rect.Width - radius, Rect.Y, radius, radius, 270, 90);
-                GraphPath.AddLine(Rect.Width, Rect.Y + r2, Rect.Width, Rect.Height - r2);
-                GraphPath.AddArc(Rect.X + Rect.Width - radius,
-                                    Rect.Y + Rect.Height - radius, radius, radius, 0, 90);
-                GraphPath.AddLine(Rect.Width - r2, Rect.Height, Rect.X + r2, Rect.Height);
-                GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - radius, radius, radius, 90, 90);
-                GraphPath.AddLine(Rect.X, Rect.Height - r2, Rect.X, Rect.Y + r2);
-
-                GraphPath.CloseFigure();
-                return GraphPath;
-            }
-
-             
-            void OnPaint(PaintEventArgs s)
-            {
-            base.OnPaint(s);
-            RectangleF Rect = new RectangleF(0, 0, this.Width, this.Height);
-            GraphicsPath GraphPath = GetRoundPath(Rect, 50);
-
-            this.Region = new Region(GraphPath);
-            using (Pen pen = new Pen(Color.Lime, 1.75f))
-            {
-                pen.Alignment = PenAlignment.Inset;
-                s.Graphics.DrawPath(pen, GraphPath);
-            }
-            }
-
-
-
-        // Текстовая кнопка
-        // Создаёт дочернюю форму
-        Form2 settingsForm = new Form2();
+            // Текстовая кнопка
+            // Создаёт дочернюю форму
+            Form2 settingsForm = new Form2();
             // Вызывает дочернюю форму поверх родительской, так что бы нельзя было пользоваться родительской. Код родительской приостонавливается до тех пор, пока не будет закрыта дочерняя
             settingsForm.ShowDialog();
             // * После закрытия дочерней формы код родительской продолжается и текст занесёный в отделный класс в дочерней форме теперь доступен и в родительской
             // Даём клавише название текстом, который мы написали в дочерней форме
-            button2.Text = InputText.Text;
             // Вспомогательный словарь для реализации поиска
             Dictionary<char, int> iterative_dictionary = new Dictionary<char, int>();
             // номер итерации для вспомагательного словаря
-            int i = 0;
             // цикл foreach выполняется до окончания коллекции (словаря). В качестве словаря используется функция вызывающая код бека
-            foreach (var kvp in Backend(InputText.Text))
+            if (InputText.Text.Length > 0)
             {
-                // в listBox добавляются значения словаря
-                listBox1.Items.Add("\t" + kvp.Key + "\t\t" + kvp.Value);
-                // Добавляем в спомогательный словарь букву-ключ и индекс-значение
-                iterative_dictionary.Add(kvp.Key, i);
-                // Индекс++
-                i += 1;
+                button2.Text = "";
+                textBox2.Text = InputText.Text;
+                button2.Visible = false;
+                button4.Visible = true;
+                int i = 0;
+                foreach (var kvp in Backend(InputText.Text))
+                {
+                    // в listBox добавляются значения словаря
+                    listBox1.Items.Add("\t" + kvp.Key + "\t\t" + kvp.Value);
+                    // Добавляем в спомогательный словарь букву-ключ и индекс-значение
+                    iterative_dictionary.Add(kvp.Key, i);
+                    // Индекс++
+                    i += 1;
+                }
+                // Записываем вспомагалтельный словарь в класс, для использования его в других частях программы
+                Iterative_dictionary.It_dic = iterative_dictionary;
             }
-            // Записываем вспомагалтельный словарь в класс, для использования его в других частях программы
-            Iterative_dictionary.It_dic = iterative_dictionary;
-
-
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Редактирование кнопки
+            Form2 settingsForm = new Form2();
+            settingsForm.ShowDialog();
+            listBox1.Items.Clear();
+            textBox2.Text = InputText.Text;
+            Dictionary<char, int> iterative_dictionary = new Dictionary<char, int>();
+            int i = 0;
+            if (InputText.Text.Length > 0)
+            {
+                foreach (var kvp in Backend(InputText.Text))
+                {
+                    listBox1.Items.Add("\t" + kvp.Key + "\t\t" + kvp.Value);
+                    iterative_dictionary.Add(kvp.Key, i);
+                    i += 1;
+                }
+                Iterative_dictionary.It_dic = iterative_dictionary;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -160,7 +129,8 @@ namespace Front
             {
                 int index;
                 // Метод описанный ниже пытается найти символ во вспомагательном словаре, если находит, то записывает в index номер ключа и возвращаает true, иначе возвращает false
-                if (Iterative_dictionary.It_dic.TryGetValue(find[0], out index))
+                char symbol = find[0];
+                if (Iterative_dictionary.It_dic.TryGetValue(symbol, out index))
                     // Выбирает строчку в нашей таблице с номером index
                     listBox1.SelectedIndex = index;
                 else
@@ -177,28 +147,13 @@ namespace Front
         private Dictionary<char, string> Backend(string OurText)
         {
             // Код бека
-            // Dictionary<char, string> plug = new Dictionary<char, string>();
-         /*   OurText = OurText.Replace("\r", "");*/
             Dictionary<char, string> plug = Process.Main(OurText);
-
-            /*    plug.Add('\n', "0000");*/
-            /*            plug.Add("Б", "0001");
-                        plug.Add("В", "0010");
-                        plug.Add("Г", "0100");
-                        plug.Add("Д", "1000");
-                        plug.Add("Е", "0011");
-                        plug.Add("Ж", "0101");
-                        plug.Add("З", "1001");
-                        plug.Add("И", "0111");
-                        plug.Add("К", "1011");
-                        plug.Add("Л", "1111");
-                        plug.Add("М", "00000");
-                        plug.Add("Н", "00001");*/
             return plug;
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-
-        
-
-
 }
