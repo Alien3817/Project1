@@ -8,8 +8,7 @@ namespace Front
 {
     internal class Process
     {
-        public static class Codes
-        {
+        public static class Codes { 
             private static float Sum(ref double[] doubles, int L, int R)
             {
                 float Sum = 0;
@@ -24,27 +23,30 @@ namespace Front
             {
                 int Mid = (L + R) / 2;
 
-                float L_Sum = 0, R_Sum = 0;
+                float L_Sum = 0f, R_Sum = 0f;
 
                 L_Sum = Sum(ref doubles, L, Mid);
                 R_Sum = Sum(ref doubles, Mid, R);
 
+                float L_SC = L_Sum, R_SC = R_Sum;
                 for (int i = 1; ; ++i)
                 {
-                    if (R_Sum >= L_Sum || Mid - i - L < 1) { return Mid - i + 1; }
+                    if (Math.Abs(L_SC - R_SC) < Math.Abs(L_Sum - R_Sum)) { return Mid - i + 2; }
+                    else if (R_Sum >= L_Sum || Mid - i - L < 1) { return Mid - i + 1; }
                     else
                     {
+                        L_SC = L_Sum; R_SC = R_Sum;
                         L_Sum -= (float)doubles[Mid - i];
                         R_Sum += (float)doubles[Mid - i];
                     }
                 }
             }
-
             private static void StrCreate(ref string[] str, ref double[] doubles, int sPos, int ePos)
             {
                 if (ePos - sPos < 2) { return; }
 
                 int index = Index(ref doubles, sPos, ePos);
+
                 for (int i = sPos; i < index; ++i)
                 {
                     str[i] += '0';
@@ -111,7 +113,6 @@ namespace Front
                 return encodingDictionary;
             }
         }
-
 
         public static Dictionary<char, string> Main(string ourString)
         {
