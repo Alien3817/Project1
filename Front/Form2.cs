@@ -16,7 +16,7 @@ namespace Front
         {
             InitializeComponent();
             textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Text = InputText.Text;
+            if (InputText.Text != null) { textBox1.Text = InputText.Text; }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

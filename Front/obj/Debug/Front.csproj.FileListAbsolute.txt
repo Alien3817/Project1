@@ -10,47 +10,14 @@ C:\Users\MaplLeaf\source\repos\Front\Front\obj\Debug\Front.csproj.CoreCompileInp
 C:\Users\MaplLeaf\source\repos\Front\Front\obj\Debug\Front.exe
 C:\Users\MaplLeaf\source\repos\Front\Front\obj\Debug\Front.pdb
 C:\Users\MaplLeaf\source\repos\Front\Front\obj\Debug\Front.Form2.resources
-C:\Front_1\Front\Front\bin\Debug\Front.exe.config
-C:\Front_1\Front\Front\bin\Debug\Front.exe
-C:\Front_1\Front\Front\bin\Debug\Front.pdb
-C:\Front_1\Front\Front\obj\Debug\Front.csproj.AssemblyReference.cache
-C:\Front_1\Front\Front\obj\Debug\Front.Form1.resources
-C:\Front_1\Front\Front\obj\Debug\Front.Form2.resources
-C:\Front_1\Front\Front\obj\Debug\Front.Properties.Resources.resources
-C:\Front_1\Front\Front\obj\Debug\Front.csproj.GenerateResource.cache
-C:\Front_1\Front\Front\obj\Debug\Front.csproj.CoreCompileInputs.cache
-C:\Front_1\Front\Front\obj\Debug\Front.exe
-C:\Front_1\Front\Front\obj\Debug\Front.pdb
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\bin\Debug\Front.exe.config
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\bin\Debug\Front.exe
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\bin\Debug\Front.pdb
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\obj\Debug\Front.csproj.AssemblyReference.cache
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\obj\Debug\Front.Form1.resources
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\obj\Debug\Front.Form2.resources
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\obj\Debug\Front.Properties.Resources.resources
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\obj\Debug\Front.csproj.GenerateResource.cache
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\obj\Debug\Front.csproj.CoreCompileInputs.cache
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\obj\Debug\Front.exe
-C:\Users\user\Downloads\Telegram Desktop\Front_1\Front\obj\Debug\Front.pdb
-D:\cods\architect\Front_1\Front\obj\Debug\Front.csproj.AssemblyReference.cache
-D:\cods\architect\Front_1\Front\obj\Debug\Front.Form1.resources
-D:\cods\architect\Front_1\Front\obj\Debug\Front.Form2.resources
-D:\cods\architect\Front_1\Front\obj\Debug\Front.Properties.Resources.resources
-D:\cods\architect\Front_1\Front\obj\Debug\Front.csproj.GenerateResource.cache
-D:\cods\architect\Front_1\Front\obj\Debug\Front.csproj.CoreCompileInputs.cache
-D:\cods\architect\Front_1\Front\obj\Debug\Front.exe
-D:\cods\architect\Front_1\Front\obj\Debug\Front.pdb
-D:\cods\architect\Front_1\Front\bin\Debug\Front.exe.config
-D:\cods\architect\Front_1\Front\bin\Debug\Front.exe
-D:\cods\architect\Front_1\Front\bin\Debug\Front.pdb
-D:\cods\architect\2\Project1-main\Project1-main\Front\obj\Debug\Front.csproj.AssemblyReference.cache
-D:\cods\architect\2\Project1-main\Project1-main\Front\obj\Debug\Front.Form1.resources
-D:\cods\architect\2\Project1-main\Project1-main\Front\obj\Debug\Front.Form2.resources
-D:\cods\architect\2\Project1-main\Project1-main\Front\obj\Debug\Front.Properties.Resources.resources
-D:\cods\architect\2\Project1-main\Project1-main\Front\obj\Debug\Front.csproj.GenerateResource.cache
-D:\cods\architect\2\Project1-main\Project1-main\Front\obj\Debug\Front.csproj.CoreCompileInputs.cache
-D:\cods\architect\2\Project1-main\Project1-main\Front\obj\Debug\Front.exe
-D:\cods\architect\2\Project1-main\Project1-main\Front\obj\Debug\Front.pdb
-D:\cods\architect\2\Project1-main\Project1-main\Front\bin\Debug\Front.exe.config
-D:\cods\architect\2\Project1-main\Project1-main\Front\bin\Debug\Front.exe
-D:\cods\architect\2\Project1-main\Project1-main\Front\bin\Debug\Front.pdb
+D:\cods\architect\2\Front\Front\Front\bin\Debug\Front.exe.config
+D:\cods\architect\2\Front\Front\Front\bin\Debug\Front.exe
+D:\cods\architect\2\Front\Front\Front\bin\Debug\Front.pdb
+D:\cods\architect\2\Front\Front\Front\obj\Debug\Front.csproj.AssemblyReference.cache
+D:\cods\architect\2\Front\Front\Front\obj\Debug\Front.Form1.resources
+D:\cods\architect\2\Front\Front\Front\obj\Debug\Front.Form2.resources
+D:\cods\architect\2\Front\Front\Front\obj\Debug\Front.Properties.Resources.resources
+D:\cods\architect\2\Front\Front\Front\obj\Debug\Front.csproj.GenerateResource.cache
+D:\cods\architect\2\Front\Front\Front\obj\Debug\Front.csproj.CoreCompileInputs.cache
+D:\cods\architect\2\Front\Front\Front\obj\Debug\Front.exe
+D:\cods\architect\2\Front\Front\Front\obj\Debug\Front.pdb

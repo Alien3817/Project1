@@ -8,7 +8,8 @@ namespace Front
 {
     internal class Process
     {
-        public static class Codes { 
+        public static class Codes
+        {
             private static float Sum(ref double[] doubles, int L, int R)
             {
                 float Sum = 0;
@@ -117,8 +118,8 @@ namespace Front
         public static Dictionary<char, string> Main(string ourString)
         {
             /*            Console.WriteLine("Введите строку:");*/
-/*            string str = ourString;*/
-            string str = ourString.Replace("\r", "");             //Ввод строки
+            /*            string str = ourString;*/
+            string str = ourString.Replace("\r", "").Replace("\n", "");             //Ввод строки
             if (str != "")                          //Проверка на пустую строку
             {
                 Dictionary<char, int> letters_count = Codes.get_dict_of_counts(ref str);            //Создание словаря количества символов
