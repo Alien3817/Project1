@@ -6,88 +6,58 @@
         xmlns:local="clr-namespace:Front_1"
         mc:Ignorable="d"
         Title="ContextMenu" Height="250" Width="400" WindowStyle="None">
+
     <WindowChrome.WindowChrome >
         <WindowChrome  />
     </WindowChrome.WindowChrome>
+
     <Grid Cursor="Hand">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+       
+
         <DockPanel>
-            <Border
-                BorderBrush="White"
-                BorderThickness="0"
-                Background="#FFE7E9EF"
-                DockPanel.Dock="Top"
-                Height="50"
-                VerticalAlignment="Top"
-                Margin="0,0,0,0">
-
-                <DockPanel >
-
-                    <StackPanel 
-                        Orientation="Horizontal"
-                        DockPanel.Dock="Right"
-                        Width="150" 
-                        Height="50"
-                        WindowChrome.IsHitTestVisibleInChrome="True"
-                        FlowDirection="RightToLeft"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Right">
-
-                        <Border Name="close"
-                            CornerRadius="50"
-                            Width="30.75"
-                            Height="30.75"
-                            BorderBrush="#7F000000"
-                            BorderThickness="1.5"
-                            PreviewMouseUp="header_PreviewMouseUp" 
-                            PreviewMouseDown="header_PreviewMouseDown" 
-                            MouseLeave="header_MouseLeave" 
-                            Margin="0, 0, -50, 0"
-                            MouseEnter="header_MouseEnter">
-
-                            <Label 
-                                Width="20.5"
-                                Height="20.5"
-                                Content="✕" 
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center"
-                                FontSize="12"
-                                FontFamily="Arial"
-                                Foreground="#7F000000" 
-                                Margin="0,0,-2.5,0" />
-
+            <Border BorderBrush="White" BorderThickness="0" Background="#FFE7E9EF" DockPanel.Dock="Top" Height="50" VerticalAlignment="Top" Margin="0,0,0,0">
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Width="150" Height="50" WindowChrome.IsHitTestVisibleInChrome="True" FlowDirection="RightToLeft" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <Border Name="close" CornerRadius="50" Width="30.75" Height="30.75" BorderBrush="#7F000000" BorderThickness="1.5"
+                                PreviewMouseUp="header_PreviewMouseUp" PreviewMouseDown="header_PreviewMouseDown" MouseLeave="header_MouseLeave" Margin="0, 0, -50, 0" MouseEnter="header_MouseEnter">
+                            <Label Width="20.5" Height="20.5" Content="✕" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"
+                                   FontFamily="Arial" Foreground="#7F000000" Margin="0,0,-2.5,0" />
                         </Border>
                     </StackPanel>
                 </DockPanel>
-
             </Border>
         </DockPanel>
 
-        <Button 
-            Content="Команда проекта" 
-            Width="240" 
-            Height="40"
-            Background="{x:Null}" 
-            Foreground="#DD000000" 
-            FontSize="20"
-            BorderBrush="{x:Null}" 
-            RenderTransformOrigin="-0.03,0.5" 
-            Margin="60,100,0,100" Cursor="Hand" FontWeight="Regular" FontFamily="Roboto" HorizontalAlignment="Left" BorderThickness="0,0,0,0" Grid.Row="3" HorizontalContentAlignment="Left"/>
+        <Button Content="Команда проекта" Width="240" Height="40" Background="{x:Null}" Foreground="#DD000000" FontSize="20"
+                BorderBrush="{x:Null}" RenderTransformOrigin="-0.03,0.5" Margin="60,116,0,94" Cursor="Hand" FontWeight="Regular"
+                Click="ButtonTeam_Click" FontFamily="Roboto" HorizontalAlignment="Left" BorderThickness="0,0,0,0" HorizontalContentAlignment="Left"/>
 
-        <Button Content="Язык" Width="240" Background="{x:Null}" Foreground="#DD000000" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" RenderTransformOrigin="-0.03,0.5" Margin="60,150,0,70" Cursor="Hand" FontWeight="Regular" FontFamily="Roboto" HorizontalAlignment="Left" Click="Button_Click_1" Grid.Row="3" HorizontalContentAlignment="Left"/>
+        <Button Content="Язык" Width="240" Background="{x:Null}" Foreground="#DD000000" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}"
+                RenderTransformOrigin="-0.03,0.5" Margin="60,170,0,48" Cursor="Hand" FontWeight="Regular" FontFamily="Roboto" HorizontalAlignment="Left"
+                Click="ButtonLanguage_Click" HorizontalContentAlignment="Left"/>
 
-        <Button
-            VerticalAlignment="Top"
-            HorizontalAlignment="Left"
-            TextBlock.FontFamily="Roboto"
-            TextBlock.FontSize="20"
-            TextBlock.FontWeight="DemiBold"
-            Width="240"
-            Height="40" Margin="60,65,0,0" BorderThickness="0,0,0,0" Foreground="#DD000000" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click" FontWeight="Regular" Cursor="Hand" Grid.Row="3" HorizontalContentAlignment="Left">
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" TextBlock.FontFamily="Roboto" TextBlock.FontSize="20" TextBlock.FontWeight="DemiBold"
+                Width="240" Height="40" Margin="60,65,0,0" BorderThickness="0,0,0,0" Foreground="#DD000000" Background="{x:Null}" BorderBrush="{x:Null}"
+                Click="ButtonInformation_Click" FontWeight="Regular" Cursor="Hand" Grid.Row="3" HorizontalContentAlignment="Left">
             О программе
         </Button>
 
+        <Grid Width="40" Height="40" VerticalAlignment="Top" Margin="-310,65,0,0">
+            <Border Height="40" CornerRadius="50" Background="#3B62EA" Margin="0,0,0,0" >
+                <Image Width="24" Height="24" Source="D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\Properties\icons\InformationCircleOutline.png" Margin="0,0,0,0"/>
+            </Border>
+        </Grid>
+
+        <Grid Width="40" Height="40" VerticalAlignment="Top" Margin="-310,115,0,0">
+            <Border Height="40" CornerRadius="50" Background="#3B62EA" Margin="0,0,0,0" >
+                <Image Width="19" Height="16" Source="D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\Properties\icons\team.png" Margin="0,0,0,0"/>
+            </Border>
+        </Grid>
+
+        <Grid Width="40" Height="40" VerticalAlignment="Top" Margin="-310,165,0,0">
+            <Border Height="40" CornerRadius="50" Background="#3B62EA" Margin="0,0,0,0" >
+                <Image Width="18" Height="18" Source="D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\Properties\icons\Lang.png" Margin="0,0,0,0"/>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

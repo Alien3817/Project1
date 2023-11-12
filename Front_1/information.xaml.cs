@@ -15,13 +15,13 @@ using System.Windows.Shapes;
 namespace Front_1
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для information.xaml
     /// </summary>
-    public partial class ContextMenu : Window
+    public partial class information : Window
     {
-        public ContextMenu()
+        public information()
         {
-            InitializeComponent();  
+            InitializeComponent();
         }
 
         // обрабатывает наведение на кнопку
@@ -72,7 +72,6 @@ namespace Front_1
             }
         }
 
-
         // управение действием кнопок: закрыть, на весь экран, маленькое окно, свернуть на панель задач
         private void header_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
@@ -88,27 +87,6 @@ namespace Front_1
             }
             else
                 this.WindowState = WindowState.Minimized;
-        }
-
-        private void ButtonInformation_Click(object sender, RoutedEventArgs e)
-        {
-            var menu = new information();
-
-            menu.Owner = this;
-            menu.ShowDialog();
-        }
-
-        private void ButtonTeam_Click(object sender, RoutedEventArgs e)
-        {
-            var menu = new Team();
-
-            menu.Owner = this;
-            menu.ShowDialog();
-        }
-
-        private void ButtonLanguage_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
