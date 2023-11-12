@@ -225,8 +225,8 @@
                 VerticalAlignment="Bottom">
 
                 <!-- горизонтальные полосы -->
-                <ListBox x:Name="ListBox_Value" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListBox_Value_SelectionChanged" HorizontalAlignment="Left" Margin="20,15,30,0" FontFamily="Roboto" 
-                    FontSize="20" />
+                <ListBox x:Name="ListBox_Value" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListBox_Value_SelectionChanged" HorizontalAlignment="Left" Margin="20,15,0,0" FontFamily="Roboto" 
+                    FontSize="20" Width="876" />
             </Border>
 
 
