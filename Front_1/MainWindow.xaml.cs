@@ -25,11 +25,35 @@ namespace Front_1
     {
         public MainViewModel ViewModel { get; set; }
 
+        public void UpdateInputTextBox2(string newText)
+        {
+            inputTextBox2.Text = newText;
+        }
+
+        public void ProcessAndDisplay()
+        {
+            // Получите новый текст из inputTextBox2
+            string inputText = inputTextBox2.Text;
+
+            // Обработайте новый текст и обновите ListBox
+            if (!string.IsNullOrEmpty(inputText))
+            {
+                Dictionary<char, string> encodingDictionary = Process.Main(inputText);
+                List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
+
+                resultListBox.ItemsSource = resultList;
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+
+            // Создайте экземпляр MainViewModel и присвойте его DataContext
             ViewModel = new MainViewModel();
             DataContext = ViewModel;
+
+            ProcessAndDisplay(); // Вызовите метод обработки и отображения
         }
 
         public class ResultItem
@@ -40,28 +64,31 @@ namespace Front_1
 
         private void inputTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            InputWindow inputWindow = new InputWindow(ViewModel);
-            bool? result = inputWindow.ShowDialog();
-
-            if (result == true)
+            if (ViewModel != null)
             {
-                // При закрытии InputWindow обновляем текст в inputTextBox
-                inputTextBox2.Text = ViewModel.InputText;
+                InputWindow inputWindow = new InputWindow(ViewModel);
+                bool? result = inputWindow.ShowDialog();
 
-                // Добавляем текст в ListBox и обрабатываем его
-                string inputText = ViewModel.InputText;
-                resultListBox.Items.Clear(); // Очищаем ListBox перед добавлением новых элементов
-
-                if (!string.IsNullOrEmpty(inputText))
+                if (result == true)
                 {
-                    // Обрабатываем текст с использованием методов из класса Process
-                    Dictionary<char, string> encodingDictionary = Process.Main(inputText);
+                    // При закрытии InputWindow обновляем текст в inputTextBox
+                    inputTextBox2.Text = ViewModel.InputText;
 
-                    // Преобразуем словарь в список элементов ResultItem
-                    List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
+                    // Добавляем текст в ListBox и обрабатываем его
+                    string inputText = ViewModel.InputText;
+                    resultListBox.Items.Clear(); // Очищаем ListBox перед добавлением новых элементов
 
-                    // Добавляем элементы в ListBox
-                    resultListBox.ItemsSource = resultList;
+                    if (!string.IsNullOrEmpty(inputText))
+                    {
+                        // Обрабатываем текст с использованием методов из класса Process
+                        Dictionary<char, string> encodingDictionary = Process.Main(inputText);
+
+                        // Преобразуем словарь в список элементов ResultItem
+                        List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
+
+                        // Добавляем элементы в ListBox
+                        resultListBox.ItemsSource = resultList;
+                    }
                 }
             }
         }
