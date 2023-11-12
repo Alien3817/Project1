@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Front_1"
         mc:Ignorable="d"
         Title="Team" Height="630" Width="400" WindowStyle="None">
-    <WindowChrome.WindowChrome >
-        <WindowChrome  />
+    <WindowChrome.WindowChrome>
+        <WindowChrome />
     </WindowChrome.WindowChrome>
 
     <Grid>
@@ -24,8 +24,9 @@
                     </StackPanel>
                 </DockPanel>
             </Border>
-            <TextBlock TextWrapping="Wrap" Width="350" Height="530" FontSize="20" FontFamily="Roboto" FontWeight="Light" Text="Команда"/>
+            <TextBlock TextWrapping="Wrap" Width="350" Height="530" FontSize="20" FontFamily="Roboto" FontWeight="Light" 
+                     Text="Администратор - Шохоева Валерия&#x0A;Архитектор - Волчков Игорь&#x0A;Команда аналитиков:&#x0A;Волчков Игорь&#x0A;Лю Хао&#x0A;Команда Backend-разработчиков&#x0A;Соловей Алексей&#x0A;Костин Иван&#x0A;Порошин Дмитрий&#x0A;Команда Frontend-разработчиков:&#x0A;Чеботарев Сергей&#x0A;Пинчуков Александр&#x0A;Бикова Валерия&#x0A;Команда дизайнеров:&#x0A;Бикова Валерия&#x0A;Габышева Ангелина&#x0A;Команда тестировщиков:&#x0A;Шетько Глеб&#x0A;" />
         </DockPanel>
 
     </Grid>
-</Window>
+    </Window>

@@ -108,7 +108,10 @@ namespace Front_1
 
         private void ButtonLanguage_Click(object sender, RoutedEventArgs e)
         {
+            var menu = new Language();
 
+            menu.Owner = this;
+            menu.ShowDialog();
         }
     }
 }

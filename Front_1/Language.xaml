@@ -12,11 +12,10 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="49*"/>
-            <ColumnDefinition Width="351*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <DockPanel Grid.ColumnSpan="2">
+        <DockPanel>
             <Border BorderBrush="White" BorderThickness="0" Background="#FFE7E9EF" DockPanel.Dock="Top" Height="50" VerticalAlignment="Top" Margin="0,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DockPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Width="150" Height="50" WindowChrome.IsHitTestVisibleInChrome="True" FlowDirection="RightToLeft" VerticalAlignment="Top" HorizontalAlignment="Right">
@@ -28,9 +27,11 @@
                     </StackPanel>
                 </DockPanel>
             </Border>
-           
+
         </DockPanel>
-        <RadioButton Content="RadioButton" Width="24" />
+        <RadioButton Content="中文" HorizontalAlignment="Left" Margin="15,110,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" FontSize="20" FontFamily="Roboto" Background="#FF3B62EA" BorderBrush="#FF3B62EA"/>
+        <RadioButton Content="Русский" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Center" Checked="RadioButton_Checked" FontSize="20" FontFamily="Roboto" Width="96" Background="#FF3B62EA" BorderBrush="#FF3B62EA" IsChecked="True"/>
+
 
     </Grid>
 </Window>
