@@ -32,6 +32,12 @@ namespace Front_1
             DataContext = ViewModel;
         }
 
+        public class ResultItem
+        {
+            public char Letter { get; set; }
+            public string Code { get; set; }
+        }
+
         private void inputTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             InputWindow inputWindow = new InputWindow(ViewModel);
@@ -39,8 +45,37 @@ namespace Front_1
 
             if (result == true)
             {
-                // При закрытии InputWindow обновляем текст в inputTextBox
+                // Обновляем ListBox
+                UpdateListBox();
+
+                // При закрытии InputWindow обновляем текст в inputTextBox2
                 inputTextBox2.Text = ViewModel.InputText;
+            }
+        }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Обновляем ListBox при нажатии кнопки отправки
+            UpdateListBox();
+        }
+
+        private void UpdateListBox()
+        {
+            // Добавляем текст в ListBox и обрабатываем его
+            string inputText = ViewModel.InputText;
+
+            if (!string.IsNullOrEmpty(inputText))
+            {
+                // Обрабатываем текст с использованием методов из класса Process
+                Dictionary<char, string> encodingDictionary = Process.Main(inputText);
+
+                // Преобразуем словарь в список элементов ResultItem
+                List<ResultItem> resultList = encodingDictionary
+                    .Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value })
+                    .ToList();
+
+                // Добавляем элементы в ListBox
+                resultListBox.ItemsSource = resultList;
             }
         }
 
