@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="InputText.cs" />
     <Compile Include="Iterative_dictionary.cs" />
+    <Compile Include="Language.cs" />
     <Compile Include="Process.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
