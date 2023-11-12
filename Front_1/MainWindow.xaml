@@ -1,0 +1,249 @@
+﻿<Window x:Class="Front_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Front_1"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:hamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
+        Title="" Height="720" Width="1280">
+    <WindowChrome.WindowChrome >
+        <WindowChrome  />
+    </WindowChrome.WindowChrome>
+    <Grid x:Name="mainWindow" 
+        Background="#E7E9EF">
+
+        <!-- Иконка бургера -->
+        <Image 
+            Source="D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\Properties\icons\Menu.png"
+            Height="30"
+            Width="30"
+            Margin="37.5,105,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+
+        <!-- Кнопка бургера -->
+        <Button
+            Name="button1"
+            Click="button1_Click"
+            Height="30"
+            Width="30" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Margin="37.5,105,0,0"
+            Background="{x:Null}"
+            Opacity="0.1" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" >
+            <Button.ContextMenu>
+                <ContextMenu x:Name="contextMenuStrip1" Background="#872067" Width="100" Height="100">
+                    <!-- Add menu items here if needed -->
+                </ContextMenu>
+            </Button.ContextMenu>
+
+        </Button>
+
+
+        <Border 
+            Name="Shamdivgla" 
+            BorderBrush ="#E7E9EF" Cursor="Hand">
+
+            <DockPanel>
+
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    DockPanel.Dock="Right" 
+                    Width="150" Height="29" 
+                    WindowChrome.IsHitTestVisibleInChrome="True" 
+                    FlowDirection="RightToLeft" 
+                    VerticalAlignment="Top" 
+                    HorizontalAlignment="Right">
+
+                    <Border 
+                        Name="close" 
+                        Width="47" 
+                        Height="29" 
+                        Background="WhiteSmoke" 
+                        PreviewMouseUp="header_PreviewMouseUp"  
+                        PreviewMouseDown="header_PreviewMouseDown" 
+                        MouseLeave="header_MouseLeave" 
+                        MouseEnter="header_MouseEnter">
+
+                        <Label
+                            Content="✕"
+                            HorizontalAlignment="Center"
+                            Margin="0,1,0,0" 
+                            FontSize="14" 
+                            FontFamily="Arial" 
+                            Foreground="Black" />
+
+                    </Border>
+                    <Border
+                        x:Name="roll"
+                        Width="47" 
+                        Height="29" 
+                        Background="WhiteSmoke" 
+                        PreviewMouseUp="header_PreviewMouseUp"  
+                        PreviewMouseDown="header_PreviewMouseDown"
+                        MouseLeave="header_MouseLeave" 
+                        MouseEnter="header_MouseEnter" HorizontalAlignment="Right" >
+
+                        <Label 
+                            Content="–"
+                            HorizontalAlignment="Center"
+                            Margin="0,-4,0,0" 
+                            FontSize="16"
+                            Foreground="Black" />
+
+                    </Border>
+                </StackPanel>
+
+                <Border 
+                    Background="#E7E9EF"
+                    DockPanel.Dock="Top" 
+                    Height="50" 
+                    VerticalAlignment="Top" HorizontalAlignment="Left">
+
+                    <DockPanel >
+
+                        <Border
+                            Name="title"
+                            Width="30" 
+                            Height="29"
+                            Background="White"
+                            CornerRadius="50"
+                            Margin="10,0,0,0">
+
+
+                        </Border>
+                        <Label
+                            Content="Shamdivgla" 
+                            FontSize="16"
+                            FontWeight="Bold" 
+                            Margin="10,10,0,0" 
+                            Width="96"/>
+
+
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+        </Border>
+
+        <StackPanel>
+            <!-- Граница для зоны ввода текста -->
+            <Border
+                Background="White" 
+                Width="1080"
+                Height="60" 
+                CornerRadius="30,30,30,30" 
+                Margin="100,90,0,0" HorizontalAlignment="Left">
+
+                <!-- Ввод текста -->
+                <TextBox
+                    x:Name="inputTextBox"
+                    PreviewMouseDown="OnPreviewMouseDown"
+                    GotFocus="inputTextBox_GotFocus" 
+                    FontFamily="Roboto"
+                    FontSize="20"
+                    BorderBrush="white"
+                    FontWeight="Light" 
+                    materialDesign:HintAssist.Hint="Введите текст..." 
+                    Margin="30,15,23,15"  
+                    Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}, Path=DataContext.InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+            </Border>
+
+            <!-- Граница для зоны "Алфавит" -->
+            <Border 
+                Background="White"
+                Width="160"
+                Height="50" 
+                CornerRadius="30,0,0,30" 
+                HorizontalAlignment="Left" 
+                Margin="100,50,0,0">
+
+                <!-- Текст "Алфавит" -->
+                <TextBlock 
+                    Width="84"
+                    Height="22"
+                    VerticalAlignment="Center" 
+                    FontFamily="Roboto" 
+                    FontSize="20">Алфавит</TextBlock>
+
+            </Border>
+
+            <!-- Граница для зоны "Двоичный код" -->
+            <Border
+                BorderThickness="1"
+                BorderBrush="#3B62EA" 
+                Background="White"
+                Width="920" 
+                Height="50" 
+                CornerRadius="0,30,30,0" 
+                HorizontalAlignment="Right"
+                Margin="0,-50,100,0">
+
+                <!-- Текст "Двоичный код" -->
+                <TextBlock 
+                    Width="140"
+                    Height="22" 
+                    FontFamily="Roboto" 
+                    FontSize="20" 
+                    HorizontalAlignment="Left" 
+                    Margin="20,0,0,0">Двоичный код</TextBlock>
+
+            </Border>
+
+
+
+            <!-- Граница для зоны символы -->
+            <Border
+                Background="White"
+                Width="160"
+                Height="330" 
+                CornerRadius="30,0,0,30" 
+                Margin="100,50,0,0" 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom">
+
+                <!-- горизонтальные полосы -->
+                <ListBox
+                    x:Name="ListBox_Key" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="38,15,0,0" FontFamily="Roboto" 
+                    FontSize="20" SelectionChanged="ListBox_Key_SelectionChanged" />
+
+            </Border>
+
+            <!-- Граница для зоны код -->
+            <Border 
+                BorderThickness="1" 
+                BorderBrush="#3B62EA"
+                Background="White"
+                Width="920" 
+                Height="330"
+                CornerRadius="0,30,30,0" 
+                HorizontalAlignment="Right" 
+                Margin="0,-500,100,0"
+                VerticalAlignment="Bottom">
+
+                <!-- горизонтальные полосы -->
+                <ListBox x:Name="ListBox_Value" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListBox_Value_SelectionChanged" HorizontalAlignment="Left" Margin="20,15,30,0" FontFamily="Roboto" 
+                    FontSize="20" />
+            </Border>
+
+
+        </StackPanel>
+
+        <!---->
+        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border 
+                CornerRadius="30,30,30,30" 
+                Background="White" 
+                Width="30" 
+                Height="30" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Margin="10,10,0,0"></Border>
+        </DockPanel>
+
+
+    </Grid>
+
+</Window>
