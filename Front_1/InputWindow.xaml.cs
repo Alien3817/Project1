@@ -19,7 +19,6 @@ namespace Front_1
     /// </summary>
     public partial class InputWindow : Window
     {
-        public string ViewModel { get; set; }
         public System.Windows.Controls.ScrollBarVisibility VerticalScrollBarVisibility { get; set; }
 
         public delegate void TextChangedEventHandler(string newText);
@@ -28,11 +27,14 @@ namespace Front_1
         public string EnteredText { get; set; }
         public string InputText { get; internal set; }
 
-        public InputWindow()
+        public MainViewModel ViewModel { get; set; }
+
+        public InputWindow(MainViewModel viewModel)
         {
             InitializeComponent();
+            ViewModel = viewModel;
+            DataContext = ViewModel;
             Closed += InputWindow_Closed;
-
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)

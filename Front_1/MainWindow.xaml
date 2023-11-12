@@ -139,16 +139,16 @@
 
                 <!-- Ввод текста -->
                 <TextBox
-        x:Name="inputTextBox2"
-        PreviewMouseDown="OnPreviewMouseDown"
-        GotFocus="inputTextBox_GotFocus" 
-        FontFamily="Roboto"
-        FontSize="20"
-        BorderBrush="white"
-        FontWeight="Light" 
-        materialDesign:HintAssist.Hint="Введите текст..." 
-        Margin="30,15,23,15"  
-        Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+    x:Name="inputTextBox2"
+    PreviewMouseDown="OnPreviewMouseDown"
+    GotFocus="inputTextBox_GotFocus" 
+    FontFamily="Roboto"
+    FontSize="20"
+    BorderBrush="white"
+    FontWeight="Light" 
+    materialDesign:HintAssist.Hint="Введите текст..." 
+    Margin="30,15,23,15"  
+    Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
             </Border>
 
