@@ -39,7 +39,7 @@ namespace Front_1
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            InputText = inputTextBox1.Text;
+            ViewModel.InputText = inputTextBox1.Text;
             DialogResult = true;
             Close();
         }
@@ -49,7 +49,7 @@ namespace Front_1
             // Сохраняем текст, если окно закрыто не через кнопку Send
             if (!DialogResult.HasValue || !DialogResult.Value)
             {
-                InputText = inputTextBox1.Text;
+                ViewModel.InputText = inputTextBox1.Text;
             }
         }
         

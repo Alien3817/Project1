@@ -75,6 +75,7 @@
     <Compile Include="Language.xaml.cs">
       <DependentUpon>Language.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Process.cs" />
     <Compile Include="Team.xaml.cs">
       <DependentUpon>Team.xaml</DependentUpon>
     </Compile>
