@@ -49,7 +49,7 @@ namespace Front_1
             // Сохраняем текст, если окно закрыто не через кнопку Send
             if (!DialogResult.HasValue || !DialogResult.Value)
             {
-                ViewModel.InputText = inputTextBox1.Text;
+                ViewModel.InputText = inputTextBox1.Text; 
             }
         }
         

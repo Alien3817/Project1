@@ -45,37 +45,24 @@ namespace Front_1
 
             if (result == true)
             {
-                // Обновляем ListBox
-                UpdateListBox();
-
-                // При закрытии InputWindow обновляем текст в inputTextBox2
+                // При закрытии InputWindow обновляем текст в inputTextBox
                 inputTextBox2.Text = ViewModel.InputText;
-            }
-        }
 
-        private void SendButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Обновляем ListBox при нажатии кнопки отправки
-            UpdateListBox();
-        }
+                // Добавляем текст в ListBox и обрабатываем его
+                string inputText = ViewModel.InputText;
+                resultListBox.Items.Clear(); // Очищаем ListBox перед добавлением новых элементов
 
-        private void UpdateListBox()
-        {
-            // Добавляем текст в ListBox и обрабатываем его
-            string inputText = ViewModel.InputText;
+                if (!string.IsNullOrEmpty(inputText))
+                {
+                    // Обрабатываем текст с использованием методов из класса Process
+                    Dictionary<char, string> encodingDictionary = Process.Main(inputText);
 
-            if (!string.IsNullOrEmpty(inputText))
-            {
-                // Обрабатываем текст с использованием методов из класса Process
-                Dictionary<char, string> encodingDictionary = Process.Main(inputText);
+                    // Преобразуем словарь в список элементов ResultItem
+                    List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
 
-                // Преобразуем словарь в список элементов ResultItem
-                List<ResultItem> resultList = encodingDictionary
-                    .Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value })
-                    .ToList();
-
-                // Добавляем элементы в ListBox
-                resultListBox.ItemsSource = resultList;
+                    // Добавляем элементы в ListBox
+                    resultListBox.ItemsSource = resultList;
+                }
             }
         }
 
