@@ -64,15 +64,15 @@
                 </DockPanel>
             </Border>
             <TextBox 
-                x:Name="inputTextBox"
-                BorderBrush="{x:Null}" 
-                materialDesign:HintAssist.Hint="Введите текст..." 
-                TextWrapping="Wrap" Width="560" Height="300" VerticalScrollBarVisibility="Visible"
-                VerticalAlignment="Top" HorizontalAlignment="Center"
-                Margin= "15, 15, 0, 0"
-                Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}, Path=DataContext.InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                FontFamily="Roboto" FontSize="20" TextChanged="TextBox1_Changed_TextChanged"/>
-           
+        x:Name="inputTextBox1"
+        BorderBrush="{x:Null}" 
+        materialDesign:HintAssist.Hint="Введите текст..." 
+        TextWrapping="Wrap" Width="560" Height="300" VerticalScrollBarVisibility="Visible"
+        VerticalAlignment="Top" HorizontalAlignment="Center"
+        Margin="15, 15, 0, 0"
+        Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+        FontFamily="Roboto" FontSize="20" TextChanged="TextBox1_Changed_TextChanged"/>
+
 
         </DockPanel>
 

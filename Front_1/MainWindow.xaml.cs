@@ -34,13 +34,13 @@ namespace Front_1
         private void inputTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             InputWindow inputWindow = new InputWindow();
-            inputWindow.InputText = inputTextBox.Text;
+            inputWindow.InputText = inputTextBox2.Text;
             bool? result = inputWindow.ShowDialog();
 
             if (result == true)
             {
                 // При закрытии InputWindow обновляем текст в inputTextBox
-                inputTextBox.Text = inputWindow.InputText;
+                inputTextBox2.Text = inputWindow.InputText;
             }
         }
 
@@ -71,7 +71,7 @@ namespace Front_1
             if (e.ClickCount == 3)
             {
                 // Открыть окно InputWindow при условии отсутствия текста в textblock
-                if (string.IsNullOrWhiteSpace(inputTextBox.Text))
+                if (string.IsNullOrWhiteSpace(inputTextBox2.Text))
                 {
                     InputWindow inputWindow = new InputWindow();
                     bool? result = inputWindow.ShowDialog();
@@ -79,7 +79,7 @@ namespace Front_1
                     if (result == true)
                     {
                         // Получить введенный текст и установить его в textblock
-                        inputTextBox.Text = inputWindow.InputText;
+                        inputTextBox2.Text = inputWindow.InputText;
                     }
                 }
             }
@@ -87,16 +87,16 @@ namespace Front_1
             else if (e.ClickCount == 2)
             {
                 // Редактирование текста при наличии текста в textblock
-                if (!string.IsNullOrWhiteSpace(inputTextBox.Text))
+                if (!string.IsNullOrWhiteSpace(inputTextBox2.Text))
                 {
                     InputWindow inputWindow = new InputWindow();
-                    inputWindow.InputText = inputTextBox.Text; // Передать текущий текст в окно редактирования
+                    inputWindow.InputText = inputTextBox2.Text; // Передать текущий текст в окно редактирования
                     bool? result = inputWindow.ShowDialog();
 
                     if (result == true)
                     {
                         // Получить отредактированный текст и установить его в textblock
-                        inputTextBox.Text = inputWindow.InputText;
+                        inputTextBox2.Text = inputWindow.InputText;
                     }
                 }
             }
