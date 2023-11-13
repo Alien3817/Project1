@@ -226,7 +226,7 @@
             </Grid>
 
             <Grid Width="60" Height="60" VerticalAlignment="Top" Margin="0,-160,100,0" HorizontalAlignment="Right">
-                <Border x:Name="AnimatedBorder" Height="60" CornerRadius="50"
+                <Border  Height="60" CornerRadius="50"
                 Background="White" BorderThickness="1,1,1,1" >
                     <Image Width="24" Height="24" Margin="0, 0, 0, 0" Source="D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\Properties\icons\RefreshOutline.png"/>
 

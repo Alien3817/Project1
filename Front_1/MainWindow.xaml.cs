@@ -26,7 +26,7 @@ namespace Front_1
     {
         public MainViewModel ViewModel { get; set; }
 
-        private bool isFlipped = false;
+        //private bool isFlipped = false;
 
         public void UpdateInputTextBox2(string newText)
         {
@@ -82,7 +82,8 @@ namespace Front_1
 
                     // Добавляем текст в ListBox и обрабатываем его
                     string inputText = ViewModel.InputText;
-                    resultListBox.Items.Clear(); // Очищаем ListBox перед добавлением новых элементов
+                    //resultListBox.Items.Clear(); // Очищаем ListBox перед добавлением новых элементов
+                    //UpdateListBox();
 
                     if (!string.IsNullOrEmpty(inputText))
                     {
@@ -93,11 +94,39 @@ namespace Front_1
                         List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
 
                         // Добавляем элементы в ListBox
-                        resultListBox.ItemsSource = resultList;
+                        //resultListBox.ItemsSource = resultList;
+                        UpdateListBox();
                     }
                 }
             }
         }
+
+
+        private void UpdateListBox()
+        {
+            string inputText = ViewModel.InputText;
+
+            if (!string.IsNullOrEmpty(inputText))
+            {
+                // Обрабатываем текст с использованием методов из класса Process
+                Dictionary<char, string> encodingDictionary = Process.Main(inputText);
+
+                // Преобразуем словарь в список элементов ResultItem
+                List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
+
+                // Устанавливаем ItemsSource один раз, не изменяя его позже
+                resultListBox.ItemsSource = resultList;
+
+                // Явно сообщаем ListBox о необходимости обновления
+                resultListBox.Items.Refresh();
+            }
+            else
+            {
+                // Если inputText пуст, очищаем ItemsSource
+                resultListBox.ItemsSource = null;
+            }
+        }
+
 
         //БУРГЕР
         private void button1_Click(object sender, EventArgs e)
@@ -251,40 +280,9 @@ namespace Front_1
         }
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
-            // Определите анимацию переворота
-            RotateTransform rotateTransform = new RotateTransform();
-            AnimatedBorder.RenderTransform = rotateTransform;
-            DoubleAnimation rotationAnimation = new DoubleAnimation();
-            rotationAnimation.To = isFlipped ? 0 : 180; // Переворачиваем на 180 градусов, если не перевернуто, иначе возвращаем обратно
-            rotationAnimation.Duration = TimeSpan.FromSeconds(1);
+            
 
-            // Определите анимацию изменения текста в TextBox
-            string newText = isFlipped ? "Initial Content" : "Changed Content";
-            TextBlock contentText = AnimatedBorder.FindName("ContentText") as TextBlock;
-            if (contentText != null)
-            {
-                contentText.Text = newText;
-            }
 
-            // Определите анимацию изменения прозрачности
-            DoubleAnimation opacityAnimation = new DoubleAnimation();
-            opacityAnimation.To = isFlipped ? 1 : 0.5; // Изменяем прозрачность, чтобы подчеркнуть анимацию
-            opacityAnimation.Duration = TimeSpan.FromSeconds(1);
-
-            // Совместите анимации
-            Storyboard storyboard = new Storyboard();
-            storyboard.Children.Add(rotationAnimation);
-            storyboard.Children.Add(opacityAnimation);
-            Storyboard.SetTarget(rotationAnimation, rotateTransform);
-            Storyboard.SetTargetProperty(rotationAnimation, new PropertyPath(RotateTransform.AngleProperty));
-            Storyboard.SetTarget(opacityAnimation, AnimatedBorder);
-            Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath(Border.OpacityProperty));
-
-            // Запуск анимации
-            storyboard.Begin();
-
-            // Инвертируйте флаг
-            isFlipped = !isFlipped;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
