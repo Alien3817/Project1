@@ -19,7 +19,6 @@ namespace Front_1
     /// </summary>
     public partial class InputWindow : Window
     {
-        public string ViewModel { get; set; }
         public System.Windows.Controls.ScrollBarVisibility VerticalScrollBarVisibility { get; set; }
 
         public delegate void TextChangedEventHandler(string newText);
@@ -28,18 +27,31 @@ namespace Front_1
         public string EnteredText { get; set; }
         public string InputText { get; internal set; }
 
-        public InputWindow()
+        public MainViewModel ViewModel { get; set; }
+
+        public InputWindow(MainViewModel viewModel)
         {
             InitializeComponent();
+            ViewModel = viewModel;
+            DataContext = ViewModel;
             Closed += InputWindow_Closed;
-
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            InputText = inputTextBox.Text;
+            InputText = inputTextBox1.Text;
             DialogResult = true;
+            UpdateTextAndProcess(); // Добавьте этот вызов
             Close();
+        }
+
+        private void UpdateTextAndProcess()
+        {
+            // Обновите текст в inputTextBox2
+            (Owner as MainWindow)?.UpdateInputTextBox2(InputText);
+
+            // Запустите обработку нового текста и обновите ListBox
+            (Owner as MainWindow)?.ProcessAndDisplay();
         }
 
         private void InputWindow_Closed(object sender, System.EventArgs e)
@@ -47,7 +59,7 @@ namespace Front_1
             // Сохраняем текст, если окно закрыто не через кнопку Send
             if (!DialogResult.HasValue || !DialogResult.Value)
             {
-                InputText = inputTextBox.Text;
+                ViewModel.InputText = inputTextBox1.Text; 
             }
         }
         

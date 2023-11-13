@@ -1,0 +1,107 @@
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\Front_1.exe.config
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\Front_1.exe
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\Front_1.pdb
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\MaterialDesignColors.dll
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\MaterialDesignColors.pdb
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1.csproj.AssemblyReference.cache
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\MainWindow.g.cs
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\App.g.cs
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1_MarkupCompile.cache
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1_MarkupCompile.lref
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\App.baml
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\MainWindow.baml
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1.g.resources
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1.Properties.Resources.resources
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1.csproj.GenerateResource.cache
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1.csproj.CoreCompileInputs.cache
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1.csproj.CopyComplete
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1.exe
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\Front_1.pdb
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\InputWindow.g.cs
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\InputWindow.baml
+C:\Users\huawei\source\repos\Front_1\Front_1\bin\Debug\HamburgerMenu.dll
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\ContextMenu.g.cs
+C:\Users\huawei\source\repos\Front_1\Front_1\obj\Debug\ContextMenu.baml
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.AssemblyReference.cache
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\InputWindow.g.cs
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\MainWindow.g.cs
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\ContextMenu.g.cs
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\App.g.cs
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\Front_1_MarkupCompile.cache
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\Front_1_MarkupCompile.lref
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\Front_1.exe
+C:\Users\huawei\Desktop\Front_1_MAIN\Front_1\obj\Debug\Front_1.pdb
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.AssemblyReference.cache
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\InputWindow.g.cs
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\ContextMenu.g.cs
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\App.g.cs
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1_MarkupCompile.cache
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1_MarkupCompile.lref
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1.exe
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1.pdb
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\MainWindow.g.cs
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\Front_1.exe.config
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\Front_1.exe
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\Front_1.pdb
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\HamburgerMenu.dll
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignColors.dll
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignColors.pdb
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\App.baml
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\InputWindow.baml
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\MainWindow.baml
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\ContextMenu.baml
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1.g.resources
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1.Properties.Resources.resources
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.GenerateResource.cache
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.CoreCompileInputs.cache
+C:\Users\maxim\OneDrive\Рабочий стол\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.CopyComplete
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\Front_1.exe.config
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\Front_1.exe
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\Front_1.pdb
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\HamburgerMenu.dll
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignColors.dll
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignColors.pdb
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.AssemblyReference.cache
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.SuggestedBindingRedirects.cache
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\InputWindow.g.cs
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\MainWindow.g.cs
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\ContextMenu.g.cs
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\App.g.cs
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1_MarkupCompile.cache
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1_MarkupCompile.lref
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\App.baml
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\InputWindow.baml
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\MainWindow.baml
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\ContextMenu.baml
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.g.resources
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.Properties.Resources.resources
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.GenerateResource.cache
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.CoreCompileInputs.cache
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.csproj.CopyComplete
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.exe
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Front_1.pdb
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\information.g.cs
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\information.baml
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Team.g.cs
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Team.baml
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Language.g.cs
+D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\obj\Debug\Language.baml

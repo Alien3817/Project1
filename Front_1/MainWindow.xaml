@@ -139,16 +139,16 @@
 
                 <!-- Ввод текста -->
                 <TextBox
-                    x:Name="inputTextBox"
-                    PreviewMouseDown="OnPreviewMouseDown"
-                    GotFocus="inputTextBox_GotFocus" 
-                    FontFamily="Roboto"
-                    FontSize="20"
-                    BorderBrush="white"
-                    FontWeight="Light" 
-                    materialDesign:HintAssist.Hint="Введите текст..." 
-                    Margin="30,15,23,15"  
-                    Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}, Path=DataContext.InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+    x:Name="inputTextBox2"
+    PreviewMouseDown="OnPreviewMouseDown"
+    GotFocus="inputTextBox_GotFocus" 
+    FontFamily="Roboto"
+    FontSize="20"
+    BorderBrush="white"
+    FontWeight="Light" 
+    materialDesign:HintAssist.Hint="Введите текст..." 
+    Margin="30,15,23,15"  
+    Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
             </Border>
 
@@ -206,9 +206,7 @@
                 VerticalAlignment="Bottom">
 
                 <!-- горизонтальные полосы -->
-                <ListBox
-                    x:Name="ListBox_Key" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="38,15,0,0" FontFamily="Roboto" 
-                    FontSize="20" SelectionChanged="ListBox_Key_SelectionChanged" />
+                
 
             </Border>
 
@@ -225,23 +223,27 @@
                 VerticalAlignment="Bottom">
 
                 <!-- горизонтальные полосы -->
-                <ListBox x:Name="ListBox_Value" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListBox_Value_SelectionChanged" HorizontalAlignment="Left" Margin="20,15,30,0" FontFamily="Roboto" 
-                    FontSize="20" />
+                <ListBox x:Name="resultListBox" Margin="-159,20,23,18">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Letter}" HorizontalAlignment="Center" FontFamily="Roboto" FontSize="20" FontWeight="Light" />
+                                <TextBlock Grid.Column="1" Text="{Binding Code}" FontFamily="Roboto" FontSize="20" Margin="20,0,0,0" FontWeight="Light" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </Border>
 
 
         </StackPanel>
 
         <!---->
-        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Border 
-                CornerRadius="30,30,30,30" 
-                Background="White" 
-                Width="30" 
-                Height="30" 
-                VerticalAlignment="Top" 
-                HorizontalAlignment="Left" Margin="10,10,0,0"></Border>
-        </DockPanel>
+        
 
 
     </Grid>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="Front_1.Team"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Front_1"
+        mc:Ignorable="d"
+        Title="Team" Height="630" Width="400" WindowStyle="None">
+    <WindowChrome.WindowChrome>
+        <WindowChrome />
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+
+        <DockPanel>
+            <Border BorderBrush="White" BorderThickness="0" Background="#FFE7E9EF" DockPanel.Dock="Top" Height="50" VerticalAlignment="Top" Margin="0,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Width="150" Height="50" WindowChrome.IsHitTestVisibleInChrome="True" FlowDirection="RightToLeft" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <Border Name="close" CornerRadius="50" Width="30.75" Height="30.75" BorderBrush="#7F000000" BorderThickness="1.5"
+                                PreviewMouseUp="header_PreviewMouseUp" PreviewMouseDown="header_PreviewMouseDown" MouseLeave="header_MouseLeave" Margin="0, 0, -50, 0" MouseEnter="header_MouseEnter">
+                            <Label Width="20.5" Height="20.5" Content="✕" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"
+                                   FontFamily="Arial" Foreground="#7F000000" Margin="0,0,-2.5,0" />
+                        </Border>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+            <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Width="350" Height="530" FontSize="20" FontFamily="Roboto" FontWeight="Light" 
+                     Text="Администратор - Шохоева Валерия&#x0A;Архитектор - Волчков Игорь&#x0A;Команда аналитиков:&#x0A;Волчков Игорь&#x0A;Лю Хао&#x0A;Команда Backend-разработчиков&#x0A;Соловей Алексей&#x0A;Костин Иван&#x0A;Порошин Дмитрий&#x0A;Команда Frontend-разработчиков:&#x0A;Чеботарев Сергей&#x0A;Пинчуков Александр&#x0A;Бикова Валерия&#x0A;Команда дизайнеров:&#x0A;Бикова Валерия&#x0A;Габышева Ангелина&#x0A;Команда тестировщиков:&#x0A;Шетько Глеб&#x0A;" />
+        </DockPanel>
+
+    </Grid>
+    </Window>

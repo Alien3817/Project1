@@ -90,14 +90,28 @@ namespace Front_1
                 this.WindowState = WindowState.Minimized;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonInformation_Click(object sender, RoutedEventArgs e)
         {
+            var menu = new information();
 
+            menu.Owner = this;
+            menu.ShowDialog();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ButtonTeam_Click(object sender, RoutedEventArgs e)
         {
+            var menu = new Team();
 
+            menu.Owner = this;
+            menu.ShowDialog();
+        }
+
+        private void ButtonLanguage_Click(object sender, RoutedEventArgs e)
+        {
+            var menu = new Language();
+
+            menu.Owner = this;
+            menu.ShowDialog();
         }
     }
 }
