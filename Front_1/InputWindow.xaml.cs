@@ -23,6 +23,7 @@ namespace Front_1
 
         public delegate void TextChangedEventHandler(string newText);
 
+        public event EventHandler<string> SendButtonClicked;
 
         public string EnteredText { get; set; }
         public string InputText { get; internal set; }
@@ -42,6 +43,7 @@ namespace Front_1
             InputText = inputTextBox1.Text;
             DialogResult = true;
             UpdateTextAndProcess(); // Добавьте этот вызов
+            SendButtonClicked?.Invoke(this, InputText); // Оповещение о нажатии кнопки отправки
             Close();
         }
 
