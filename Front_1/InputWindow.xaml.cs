@@ -39,9 +39,19 @@ namespace Front_1
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.InputText = inputTextBox1.Text;
+            InputText = inputTextBox1.Text;
             DialogResult = true;
+            UpdateTextAndProcess(); // Добавьте этот вызов
             Close();
+        }
+
+        private void UpdateTextAndProcess()
+        {
+            // Обновите текст в inputTextBox2
+            (Owner as MainWindow)?.UpdateInputTextBox2(InputText);
+
+            // Запустите обработку нового текста и обновите ListBox
+            (Owner as MainWindow)?.ProcessAndDisplay();
         }
 
         private void InputWindow_Closed(object sender, System.EventArgs e)
@@ -49,7 +59,7 @@ namespace Front_1
             // Сохраняем текст, если окно закрыто не через кнопку Send
             if (!DialogResult.HasValue || !DialogResult.Value)
             {
-                ViewModel.InputText = inputTextBox1.Text;
+                ViewModel.InputText = inputTextBox1.Text; 
             }
         }
         
