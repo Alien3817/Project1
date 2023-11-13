@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace Front_1
 {
@@ -25,6 +26,8 @@ namespace Front_1
     public partial class MainWindow : Window
     {
         public MainViewModel ViewModel { get; set; }
+        
+        private bool isFlipped = false;
 
         private ObservableCollection<ResultItem> resultList;
 
@@ -60,6 +63,9 @@ namespace Front_1
 
             _textProcessor = new Process();  // Инициализация экземпляра Process
             ProcessAndDisplay(); // Вызовите метод обработки и отображения
+
+            ChangeButton.Click += ChangeButton_Click;
+
             resultList = new ObservableCollection<ResultItem>();
             resultListBox.ItemsSource = resultList;
         }
@@ -227,6 +233,85 @@ namespace Front_1
         private void ListBox_Key_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Проверка и установка начальной ширины, если она равна NaN
+            if (double.IsNaN(SearchBorder.Width))
+            {
+                SearchBorder.Width = 50; // Замените 50 на ваше начальное значение
+            }
+
+            DoubleAnimation widthAnimation = new DoubleAnimation(250, TimeSpan.FromMilliseconds(200));
+            SearchBorder.BeginAnimation(FrameworkElement.WidthProperty, widthAnimation);
+
+            CornerRadius cornerRadius = new CornerRadius(30);
+            SearchBorder.CornerRadius = cornerRadius;
+
+            SearchTextBox.Visibility = Visibility.Visible;
+            DoubleAnimation opacityAnimation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(200));
+            SearchTextBox.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
+
+            // Показать CloseButton с анимацией
+            DoubleAnimation closeBtnOpacityAnimation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(200));
+            CloseButton.BeginAnimation(UIElement.OpacityProperty, closeBtnOpacityAnimation);
+            CloseButton.Visibility = Visibility.Visible;
+        }
+        private void ChangeButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Определите анимацию переворота
+            RotateTransform rotateTransform = new RotateTransform();
+            AnimatedBorder.RenderTransform = rotateTransform;
+            DoubleAnimation rotationAnimation = new DoubleAnimation();
+            rotationAnimation.To = isFlipped ? 0 : 180; // Переворачиваем на 180 градусов, если не перевернуто, иначе возвращаем обратно
+            rotationAnimation.Duration = TimeSpan.FromSeconds(1);
+
+            // Определите анимацию изменения текста в TextBox
+            string newText = isFlipped ? "Initial Content" : "Changed Content";
+            TextBlock contentText = AnimatedBorder.FindName("ContentText") as TextBlock;
+            if (contentText != null)
+            {
+                contentText.Text = newText;
+            }
+
+            // Определите анимацию изменения прозрачности
+            DoubleAnimation opacityAnimation = new DoubleAnimation();
+            opacityAnimation.To = isFlipped ? 1 : 0.5; // Изменяем прозрачность, чтобы подчеркнуть анимацию
+            opacityAnimation.Duration = TimeSpan.FromSeconds(1);
+
+            // Совместите анимации
+            Storyboard storyboard = new Storyboard();
+            storyboard.Children.Add(rotationAnimation);
+            storyboard.Children.Add(opacityAnimation);
+            Storyboard.SetTarget(rotationAnimation, rotateTransform);
+            Storyboard.SetTargetProperty(rotationAnimation, new PropertyPath(RotateTransform.AngleProperty));
+            Storyboard.SetTarget(opacityAnimation, AnimatedBorder);
+            Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath(Border.OpacityProperty));
+
+            // Запуск анимации
+            storyboard.Begin();
+
+            // Инвертируйте флаг
+            isFlipped = !isFlipped;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation widthAnimation = new DoubleAnimation(50, TimeSpan.FromMilliseconds(200));
+            SearchBorder.BeginAnimation(FrameworkElement.WidthProperty, widthAnimation);
+
+            CornerRadius cornerRadius = new CornerRadius(50);
+            SearchBorder.CornerRadius = cornerRadius;
+
+            SearchTextBox.Visibility = Visibility.Collapsed;
+            DoubleAnimation opacityAnimation = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
+            SearchTextBox.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
+
+            // Скрыть CloseButton с анимацией
+            DoubleAnimation closeBtnOpacityAnimation = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
+            CloseButton.BeginAnimation(UIElement.OpacityProperty, closeBtnOpacityAnimation);
+            CloseButton.Visibility = Visibility.Collapsed;
         }
     }
 }
