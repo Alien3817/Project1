@@ -26,8 +26,6 @@ namespace Front_1
     public partial class MainWindow : Window
     {
         public MainViewModel ViewModel { get; set; }
-        
-        private bool isFlipped = false;
 
         private ObservableCollection<ResultItem> resultList;
 
@@ -48,8 +46,8 @@ namespace Front_1
             {
                 Dictionary<char, string> encodingDictionary = Process.Main(inputText);
                 List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
-
-                resultListBox.ItemsSource = resultList;
+                this.resultList = new ObservableCollection<ResultItem>(resultList);
+                resultListBox.ItemsSource = this.resultList;
             }
         }
 
@@ -150,6 +148,9 @@ namespace Front_1
                     {
                         // Получить введенный текст и установить его в textblock
                         inputTextBox2.Text = inputWindow.InputText;
+
+                        // Вызвать метод обработки после установки нового текста
+                        ProcessAndDisplay();
                     }
                 }
             }
@@ -167,14 +168,18 @@ namespace Front_1
                     {
                         // Получить отредактированный текст и установить его в textblock
                         inputTextBox2.Text = inputWindow.InputText;
+
+                        // Вызвать метод обработки после установки нового текста
+                        ProcessAndDisplay();
                     }
                 }
             }
         }
 
 
-       
-        
+
+
+
 
         // обрабатывает наведение на кнопку
         private void header_MouseEnter(object sender, MouseEventArgs e)
