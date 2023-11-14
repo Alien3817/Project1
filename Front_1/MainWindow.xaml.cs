@@ -100,21 +100,15 @@ namespace Front_1
                     // При закрытии InputWindow обновляем текст в inputTextBox
                     inputTextBox2.Text = ViewModel.InputText;
 
-                    // Добавляем текст в ListBox и обрабатываем его
+                    // Обрабатываем текст с использованием методов из класса Process
                     string inputText = ViewModel.InputText;
-                    resultListBox.Items.Clear(); // Очищаем ListBox перед добавлением новых элементов
+                    Dictionary<char, string> encodingDictionary = Process.Main(inputText);
 
-                    foreach (var item in newResultList)
-                    {
-                        // Обрабатываем текст с использованием методов из класса Process
-                        Dictionary<char, string> encodingDictionary = Process.Main(inputText);
+                    // Преобразуем словарь в список элементов ResultItem
+                    List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
 
-                        // Преобразуем словарь в список элементов ResultItem
-                        List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
-
-                        // Добавляем элементы в ListBox
-                        resultListBox.ItemsSource = resultList;
-                    }
+                    // Устанавливаем новую коллекцию как источник данных для resultListBox
+                    resultListBox.ItemsSource = resultList;
                 }
             }
         }
