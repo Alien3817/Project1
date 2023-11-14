@@ -149,7 +149,7 @@
     FontWeight="Light" 
     materialDesign:HintAssist.Hint="Введите текст..." 
     Margin="30,15,23,15"  
-    Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+    Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TextChanged="inputTextBox2_TextChanged"/>
 
             </Border>
 
@@ -225,21 +225,36 @@
 
             </Grid>
 
-            <Grid Width="60" Height="60" VerticalAlignment="Top" Margin="0,-160,100,0" HorizontalAlignment="Right">
-                <Border  Height="60" CornerRadius="50"
-                Background="White" BorderThickness="1,1,1,1" >
-                    <Image Width="24" Height="24" Margin="0, 0, 0, 0" Source="D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\Properties\icons\RefreshOutline.png"/>
-
-
+            <Grid Width="1080" Height="60" VerticalAlignment="Top" Margin="0,-160,100,0" HorizontalAlignment="Right">
+                <Border  x:Name="ChangeBorder" BorderBrush="#FF3B62EA" Height="60" CornerRadius="50" Width="60" HorizontalAlignment="Right" Margin="0,0,0,0"
+                    Background="White" BorderThickness="1,1,1,1">
+                    <Grid>
+                        <TextBox Width="1020" Height="30" Margin="0 ,0, 30,0" x:Name="OutputTextBox" FontFamily="Roboto" FontSize="20" FontWeight="Light"    materialDesign:HintAssist.Hint="Двоичный код"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Background="{x:Null}" BorderBrush="{x:Null}"  Foreground="Black" />
+                    <Image x:Name="RefreshIcon"  Width="24" Height="24" Margin="0, 0, 0, 0" Source="D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\Properties\icons\RefreshOutline.png"/>
+                    </Grid>
                 </Border>
+               
                 <Button x:Name="ChangeButton"
-                Width="25" Height="25"
+                Width="60" Height="60"
+                Margin="1020,0,0,0"
                 Click="ChangeButton_Click"
                 Opacity="0"
+                HorizontalAlignment="Left"
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}">
                 </Button>
+
+                <Button x:Name="CloseButton2"
+            Width="50" Height="50"
+            Click="CloseButton_Click2"
+            Opacity="0"
+            Background="{x:Null}"
+            BorderBrush="{x:Null}"
+            Foreground="{x:Null}" HorizontalAlignment="Right" Margin="10,0,0,0">
+                    <Image Width="41" Height="41" Margin="-20,0,0,0" Source="D:\3 СЕМЕСТР\архитектура информационных систем\Front_1_MAIN\Front_1\Properties\icons\X.png" HorizontalAlignment="Left"/>
+                </Button>
+                
             </Grid>
 
 
