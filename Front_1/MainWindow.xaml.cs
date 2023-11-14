@@ -26,7 +26,7 @@ namespace Front_1
     {
         public MainViewModel ViewModel { get; set; }
 
-        //private bool isFlipped = false;
+        
 
         public void UpdateInputTextBox2(string newText)
         {
@@ -280,8 +280,33 @@ namespace Front_1
         }
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
-            
 
+            // Проверка и установка начальной ширины, если она равна NaN
+            if (double.IsNaN(ChangeBorder.Width))
+            {
+                ChangeBorder.Width = 60; // Замените 60 на ваше начальное значение
+            }
+
+            DoubleAnimation widthAnimation = new DoubleAnimation(1080, TimeSpan.FromMilliseconds(200));
+            ChangeBorder.BeginAnimation(FrameworkElement.WidthProperty, widthAnimation);
+
+            CornerRadius cornerRadius = new CornerRadius(30);
+            ChangeBorder.CornerRadius = cornerRadius;
+
+            RefreshIcon.Visibility = Visibility.Collapsed;
+            DoubleAnimation opacityAnimation = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
+            OutputTextBox.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
+
+            OutputTextBox.Visibility = Visibility.Visible;
+            DoubleAnimation opacityAnimation2 = new DoubleAnimation(1, TimeSpan.FromMilliseconds(200));
+            OutputTextBox.BeginAnimation(UIElement.OpacityProperty, opacityAnimation2);
+
+            // Показать CloseButton с анимацией
+            DoubleAnimation closeBtnOpacityAnimation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(200));
+            CloseButton2.BeginAnimation(UIElement.OpacityProperty, closeBtnOpacityAnimation);
+            CloseButton2.Visibility = Visibility.Visible;
+
+            
 
         }
 
@@ -301,6 +326,33 @@ namespace Front_1
             DoubleAnimation closeBtnOpacityAnimation = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
             CloseButton.BeginAnimation(UIElement.OpacityProperty, closeBtnOpacityAnimation);
             CloseButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void CloseButton_Click2(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation widthAnimation = new DoubleAnimation(60, TimeSpan.FromMilliseconds(200));
+            ChangeBorder.BeginAnimation(FrameworkElement.WidthProperty, widthAnimation);
+
+            CornerRadius cornerRadius = new CornerRadius(50);
+            ChangeBorder.CornerRadius = cornerRadius;
+
+            OutputTextBox.Visibility = Visibility.Collapsed;
+            DoubleAnimation opacityAnimation = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
+            OutputTextBox.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
+
+            RefreshIcon.Visibility = Visibility.Visible;
+            DoubleAnimation opacityAnimation2 = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
+            OutputTextBox.BeginAnimation(UIElement.OpacityProperty, opacityAnimation2);
+
+            // Скрыть CloseButton с анимацией
+            DoubleAnimation closeBtnOpacityAnimation = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
+            CloseButton2.BeginAnimation(UIElement.OpacityProperty, closeBtnOpacityAnimation);
+            CloseButton2.Visibility = Visibility.Collapsed;
+        }
+
+        private void inputTextBox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

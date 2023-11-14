@@ -23,8 +23,6 @@ namespace Front_1
 
         public delegate void TextChangedEventHandler(string newText);
 
-
-        public string EnteredText { get; set; }
         public string InputText { get; internal set; }
 
         public MainViewModel ViewModel { get; set; }
