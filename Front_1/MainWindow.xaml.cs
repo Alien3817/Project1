@@ -2,6 +2,7 @@
 using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -25,8 +26,12 @@ namespace Front_1
     public partial class MainWindow : Window
     {
         public MainViewModel ViewModel { get; set; }
-
         
+        private bool isFlipped = false;
+
+        private ObservableCollection<ResultItem> resultList;
+
+        private Process _textProcessor;
 
         public void UpdateInputTextBox2(string newText)
         {
@@ -56,10 +61,13 @@ namespace Front_1
             ViewModel = new MainViewModel();
             DataContext = ViewModel;
 
+            _textProcessor = new Process();  // Инициализация экземпляра Process
             ProcessAndDisplay(); // Вызовите метод обработки и отображения
 
             ChangeButton.Click += ChangeButton_Click;
 
+            resultList = new ObservableCollection<ResultItem>();
+            resultListBox.ItemsSource = resultList;
         }
 
         public class ResultItem
@@ -68,24 +76,35 @@ namespace Front_1
             public string Code { get; set; }
         }
 
+        private void InputWindow_SendButtonClicked(object sender, string inputText)
+        {
+            // Обработка нового текста при нажатии кнопки отправки
+            ViewModel.InputText = inputText;
+            ProcessAndDisplay();
+        }
+
         private void inputTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             if (ViewModel != null)
             {
                 InputWindow inputWindow = new InputWindow(ViewModel);
+                inputWindow.SendButtonClicked += InputWindow_SendButtonClicked;
                 bool? result = inputWindow.ShowDialog();
 
-                if (result == true)
+                // Очистка коллекции
+                resultList.Clear();
+
+                // Добавление новых элементов
+                if (!string.IsNullOrEmpty(ViewModel.InputText))
                 {
                     // При закрытии InputWindow обновляем текст в inputTextBox
                     inputTextBox2.Text = ViewModel.InputText;
 
                     // Добавляем текст в ListBox и обрабатываем его
                     string inputText = ViewModel.InputText;
-                    //resultListBox.Items.Clear(); // Очищаем ListBox перед добавлением новых элементов
-                    //UpdateListBox();
+                    resultListBox.Items.Clear(); // Очищаем ListBox перед добавлением новых элементов
 
-                    if (!string.IsNullOrEmpty(inputText))
+                    foreach (var item in newResultList)
                     {
                         // Обрабатываем текст с использованием методов из класса Process
                         Dictionary<char, string> encodingDictionary = Process.Main(inputText);
@@ -94,36 +113,9 @@ namespace Front_1
                         List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
 
                         // Добавляем элементы в ListBox
-                        //resultListBox.ItemsSource = resultList;
-                        UpdateListBox();
+                        resultListBox.ItemsSource = resultList;
                     }
                 }
-            }
-        }
-
-
-        private void UpdateListBox()
-        {
-            string inputText = ViewModel.InputText;
-
-            if (!string.IsNullOrEmpty(inputText))
-            {
-                // Обрабатываем текст с использованием методов из класса Process
-                Dictionary<char, string> encodingDictionary = Process.Main(inputText);
-
-                // Преобразуем словарь в список элементов ResultItem
-                List<ResultItem> resultList = encodingDictionary.Select(kv => new ResultItem { Letter = kv.Key, Code = kv.Value }).ToList();
-
-                // Устанавливаем ItemsSource один раз, не изменяя его позже
-                resultListBox.ItemsSource = resultList;
-
-                // Явно сообщаем ListBox о необходимости обновления
-                resultListBox.Items.Refresh();
-            }
-            else
-            {
-                // Если inputText пуст, очищаем ItemsSource
-                resultListBox.ItemsSource = null;
             }
         }
 
